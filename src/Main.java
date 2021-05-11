@@ -27,7 +27,9 @@ public class Main {
 
         // Create a generic parse tree walker that can trigger callbacks
         ParseTreeWalker walker = new ParseTreeWalker();
-        walker.walk (new MiListener(), tree);
+        MiListener listener = new MiListener();
+        walker.walk (listener, tree);
+        listener.imprimirListaMetodos();
         System.out.println ();
 
     }
