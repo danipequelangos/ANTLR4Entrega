@@ -1,4 +1,4 @@
-// Generated from C:/Users/Daniel/IdeaProjects/ANTLR4/src\Java8Lexer.g4 by ANTLR 4.9.1
+// Generated from D:/Documentos/4/GLF/Practicas/ANTLR4Entrega/src\Java8Lexer.g4 by ANTLR 4.9.1
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;

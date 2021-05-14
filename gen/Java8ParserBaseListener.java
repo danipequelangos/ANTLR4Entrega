@@ -1,4 +1,4 @@
-// Generated from C:/Users/Daniel/IdeaProjects/ANTLR4/src\Java8Parser.g4 by ANTLR 4.9.1
+// Generated from D:/Documentos/4/GLF/Practicas/ANTLR4Entrega/src\Java8Parser.g4 by ANTLR 4.9.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -891,7 +891,7 @@ public class Java8ParserBaseListener implements Java8ParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMethodDeclarator(Java8Parser.MethodDeclaratorContext ctx) {	}
+	@Override public void enterMethodDeclarator(Java8Parser.MethodDeclaratorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -1287,7 +1287,7 @@ public class Java8ParserBaseListener implements Java8ParserListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInterfaceMethodDeclaration(Java8Parser.InterfaceMethodDeclarationContext ctx) {	}
+	@Override public void enterInterfaceMethodDeclaration(Java8Parser.InterfaceMethodDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

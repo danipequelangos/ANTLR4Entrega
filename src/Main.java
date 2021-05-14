@@ -10,7 +10,7 @@ import static org.antlr.v4.runtime.CharStreams.fromStream;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        File initialFile = new File("src/Simple.java");
+        File initialFile = new File("src/CandyCrush.java");
         InputStream targetStream = new FileInputStream(initialFile);
         CharStream input = fromStream(targetStream);
 
