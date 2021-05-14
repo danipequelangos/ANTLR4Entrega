@@ -10,14 +10,17 @@ public class MiListener extends Java8ParserBaseListener {
 
     @Override public void enterMethodDeclaration(Java8Parser.MethodDeclarationContext ctx) {
         String metodo = "";
+        //Cogemos los modificadores
         for(int i = 0; i<ctx.methodModifier().size(); i++){
             metodo = metodo + ctx.methodModifier(i).getText()+" ";
         }
         int a = ctx.methodHeader().start.getStartIndex();
         int b = ctx.methodHeader().stop.getStopIndex();
         Interval interval = new Interval(a,b);
+        //Cogemos el resto de la cabecera
         metodo = metodo + ctx.methodHeader().start.getInputStream().getText(interval);
-        imprimir.add(metodo);
+        //Ponemos Dec. para distinguirlo de las invocaciones
+        imprimir.add("Dec."+metodo);
         methodID.add(ctx.methodHeader().methodDeclarator().Identifier().getText());
     }
 
@@ -46,12 +49,13 @@ public class MiListener extends Java8ParserBaseListener {
 
     public void imprimirListaMetodos(){
         for(int i = 0; i < imprimir.size(); i++){
-            if(imprimir.get(i).matches("public.*")){
+            if(imprimir.get(i).matches("Dec\\..*")){
                 System.out.println("---------------------------------------------------------");
-                System.out.println(imprimir.get(i));
+                System.out.println(imprimir.get(i).substring(4));
                 continue;
             }
             for(int j = 0; j < methodID.size(); j++){
+                //si la invocacion es de un metodo definido en el programa se imprime
                 if(imprimir.get(i).matches(methodID.get(j)+".*")){
                     System.out.println("   "+imprimir.get(i));
                 }
