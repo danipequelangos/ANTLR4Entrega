@@ -1,7 +1,7 @@
-
-
 import org.antlr.v4.runtime.misc.Interval;
 import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class MiListener extends Java8ParserBaseListener {
 
@@ -47,19 +47,21 @@ public class MiListener extends Java8ParserBaseListener {
         imprimir.add(ctx.start.getInputStream().getText(interval));
     }
 
-    public void imprimirListaMetodos(){
+    public void imprimirListaMetodos() throws IOException {
+        FileWriter myWriter = new FileWriter("Resultado.txt");
         for(int i = 0; i < imprimir.size(); i++){
             if(imprimir.get(i).matches("Dec\\..*")){
-                System.out.println("---------------------------------------------------------");
-                System.out.println(imprimir.get(i).substring(4));
+                myWriter.write("---------------------------------------------------------\n");
+                myWriter.write(imprimir.get(i).substring(4)+"\n");
                 continue;
             }
             for(int j = 0; j < methodID.size(); j++){
                 //si la invocacion es de un metodo definido en el programa se imprime
                 if(imprimir.get(i).matches(methodID.get(j)+".*")){
-                    System.out.println("   "+imprimir.get(i));
+                    myWriter.write("   "+imprimir.get(i)+"\n");
                 }
             }
         }
+        myWriter.close();
     }
 }
